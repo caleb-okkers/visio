@@ -1,0 +1,206 @@
+/* Basic setup */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-size: 18px;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #4b4242;
+}
+
+/* Navbar container */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+/* Logo */
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navbar links */
+
+.navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #00bcd4;
+}
+
+/* Hamburger menu (hidden by default) */
+
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.3rem;
+}
+
+.navbar .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+
+/* Responsive Navbar */
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+    }
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+}
+
+
+/* Action Containers */
+.action-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 1rem;
+    /* Spacing between boxes */
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.action-div {
+    background-color: #061c2c;
+    color: #fff;
+    border: 1px solid #ddd;
+    padding: 0.7rem;
+    text-align: left;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 32px;
+    width: 484px;
+    height: 201px;
+}
+
+.action-div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.action-div .action-icon {
+    width: 44px;
+    height: 45.7px;
+    opacity: 0.70; 
+    color: #29a4e6
+}
+
+.action-div .action-text {
+    width: 307px;
+    height: 103px;
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 33px;
+    font-style: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Smaller Action Container */
+.action-container-sm {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* 6 columns */
+    gap: 1rem;
+    /* Spacing between boxes */
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.action-div-sm {
+    background-color: #244AC2;
+    color: #fff;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-div-sm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .action-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on smaller screens */
+    }
+
+    .action-container-sm {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .action-container {
+        grid-template-columns: 1fr;
+        /* 1 column on very small screens */
+    }
+
+    .action-container-sm {
+        grid-template-columns: 1fr;
+        /* 1 column on very small screens */
+    }
+}
