@@ -19,6 +19,11 @@ body {
     color: #4b4242;
 }
 
+main {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
 /* Navbar container */
 
 .navbar {
@@ -103,6 +108,7 @@ body {
 
 .about-text {
     width: 50%;
+    padding: 1rem 2.1rem;
 }
 
 .about-text p {
@@ -119,7 +125,7 @@ body {
     gap: 1rem;
     /* Spacing between boxes */
     margin: 2rem 0;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .action-div {
@@ -132,7 +138,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 32px;
-    width: 484px;
+    width: 383px;
     height: 201px;
 }
 
@@ -169,7 +175,7 @@ body {
     gap: 1rem;
     /* Spacing between boxes */
     margin: 2rem 0;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .action-div-sm {
@@ -181,7 +187,7 @@ body {
     display: flex;
     justify-content: space-between;
     border-radius: 2px;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -214,4 +220,55 @@ body {
         grid-template-columns: 1fr;
         /* 1 column on very small screens */
     }
+}
+
+/* Slider container */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Individual slides */
+.slide {
+    flex: 1 0 100%;
+    height: 80vh;
+    margin-top: 2rem;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.slider-controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
