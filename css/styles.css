@@ -99,6 +99,17 @@ body {
     text-align: center;
 }
 
+/* About */
+
+.about-text {
+    width: 50%;
+}
+
+.about-text p {
+    color: #575656;
+    text-align: left;
+}
+
 
 /* Action Containers */
 .action-container {
