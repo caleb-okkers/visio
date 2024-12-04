@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /* Basic setup */
 
 * {
@@ -15,7 +17,7 @@ body {
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Open Sans", sans-serif;
     color: #4b4242;
 }
 
@@ -24,45 +26,41 @@ main {
     padding-right: 5rem;
 }
 
-/* Navbar container */
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+}
 
+header {
+    position: sticky !important;
+}
+
+
+/* Navbar container */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 1rem 2rem;
-    color: white;
+    background-color: #fff;
+    padding: 2rem 6.5rem;
+    color: #333;
+    position: relative;
+    z-index: 1000 !important;
 }
 
 /* Logo */
-
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.navbar .logo img {
+    width: 10rem;
+    
 }
 
-/* Navbar links */
-
-.navbar .nav-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.navbar .nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.navbar .nav-links a:hover {
-    color: #00bcd4;
-}
-
-/* Hamburger menu (hidden by default) */
-
+/* Hamburger menu */
 .navbar .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 0.3rem;
@@ -71,32 +69,65 @@ main {
 .navbar .hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: #3f3f3f;
+    transition: background 0.3s ease;
+    border-radius: 1px;
 }
 
-/* Responsive Navbar */
-
-@media (max-width: 768px) {
-    .navbar .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #444;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        padding: 1rem 0;
-    }
-
-    .navbar .nav-links.active {
-        display: flex;
-    }
-
-    .navbar .hamburger {
-        display: flex;
-    }
+/* Off-Canvas Nav Links */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden off the screen */
+    height: 100%;
+    width: 300px;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.5s ease; /* Smooth sliding effect */
+    z-index: 99;
+    padding: 2rem 0;
 }
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+/* Active State */
+.nav-links.active {
+    right: 0; /* Slide in from the right */
+}
+
+/* Close Button */
+.nav-links .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-links .close-btn:hover {
+    transform: scale(1.2);
+    color: #00bcd4;
+}
+
+
 
 /* Footer */
 
@@ -106,15 +137,40 @@ main {
 
 /* About */
 
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 1rem; 
+    padding: 1rem;
+    padding-top: 2.5rem;
+}
+
 .about-text {
-    width: 50%;
-    padding: 1rem 2.1rem;
+    width: 55%; 
+    padding: 1rem 2rem;
 }
 
 .about-text p {
     color: #575656;
     text-align: left;
 }
+
+.about-icon {
+    width: 45%;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 0.5rem;
+}
+
+.about-icon img {
+    max-width: 100%; 
+    height: auto;
+    /* flex: 1 1 45%; */
+    object-fit: contain;
+}
+
 
 
 /* Action Containers */
@@ -132,7 +188,7 @@ main {
     background-color: #061c2c;
     color: #fff;
     border: 1px solid #ddd;
-    padding: 0.7rem;
+    padding: 1rem;
     text-align: left;
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -140,6 +196,10 @@ main {
     font-size: 32px;
     width: 383px;
     height: 201px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .action-div:hover {
@@ -156,15 +216,18 @@ main {
 }
 
 .action-div .action-text {
-    width: 307px;
+    width: 210px;
     height: 103px;
     font-family: "Open Sans";
-    font-size: 32px;
+    font-size: 30px;
     font-weight: normal;
     line-height: 33px;
     font-style: normal;
     text-align: left;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Smaller Action Container */
@@ -197,6 +260,11 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.action-icon {
+    width: 20px;
+    z-index: 1000 !important;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .action-container {
@@ -227,7 +295,7 @@ main {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 }
 
 /* Slider */
@@ -241,7 +309,8 @@ main {
 .slide {
     flex: 1 0 100%;
     height: 80vh;
-    margin-top: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 .slide img {
@@ -253,11 +322,12 @@ main {
 /* Slider controls */
 .slider-controls {
     position: absolute;
-    top: 50%;
+    top: 46%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    z-index: 1;
 }
 
 .slider-controls button {
@@ -266,9 +336,70 @@ main {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 48px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .slider-controls button:hover {
     background: rgba(0, 0, 0, 0.8);
 }
+
+
+/* Hide buttons when they are not needed */
+.slider-controls .prev {
+    left: 10px;
+}
+
+.slider-controls .next {
+    right: 10px;
+}
+
+/* Ensure slider container overlaps the right banner */
+.slider-container {
+    position: relative;
+    z-index: 10; /* Higher than .banner-right */
+    overflow: hidden;
+}
+
+/* Banner */
+.banner {
+    position: absolute;
+    top: 18rem;
+    left: 0;
+    width: 585px; /* Adjust based on your design */
+    height: 100px;
+    background: #244ac2;
+    z-index: 11; /* Ensure it overlays the slider */
+    display: flex;
+    justify-content: center;
+}
+
+.banner-text {
+    position: absolute;
+    width: 456px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 45px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin: 0 auto;
+    padding: 25px; /* Adjust padding for text alignment */
+}
+
+/* Right Banner */
+.banner-right {
+    position: absolute;
+    top: 18rem;
+    right: 0; /* Position on the right */
+    width: 585px; /* Match left banner width */
+    height: 100px;
+    background: #000; /* Black */
+    z-index: 5; /* Lower z-index so it appears behind the slider */
+}
+
+
+
+
