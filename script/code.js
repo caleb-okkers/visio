@@ -32,42 +32,43 @@ function toggleMenu() {
     }, 8000);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".slider");
-  const slides = document.querySelectorAll(".slide");
-  const prevButton = document.querySelector(".prev");
-  const nextButton = document.querySelector(".next");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const slider = document.querySelector(".slider");
+//   const slides = document.querySelectorAll(".slide");
+//   const prevButton = document.querySelector(".prev");
+//   const nextButton = document.querySelector(".next");
 
-  let currentIndex = 0;
+//   let currentIndex = 0;
 
-  const updateButtons = () => {
-      // Hide the previous button if on the first slide
-      prevButton.style.visibility = currentIndex === 0 ? "hidden" : "visible";
+//   const updateButtons = () => {
+//       // Hide the previous button if on the first slide
+//       prevButton.style.visibility = currentIndex === 0 ? "hidden" : "visible";
 
-      // Hide the next button if on the last slide
-      nextButton.style.visibility = currentIndex === slides.length - 1 ? "hidden" : "visible";
-  };
+//       // Hide the next button if on the last slide
+//       nextButton.style.visibility = currentIndex === slides.length - 1 ? "hidden" : "visible";
+//   };
 
-  const moveSlider = () => {
-      const offset = -currentIndex * 100; // Move by 100% for each slide
-      slider.style.transform = `translateX(${offset}%)`;
-      updateButtons();
-  };
+//   const moveSlider = () => {
+//       const offset = -currentIndex * 100; // Move by 100% for each slide
+//       slider.style.transform = `translateX(${offset}%)`;
+//       updateButtons();
+//   };
 
-  prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-          currentIndex--;
-          moveSlider();
-      }
-  });
+//   prevButton.addEventListener("click", () => {
+//       if (currentIndex > 0) {
+//           currentIndex--;
+//           moveSlider();
+//       }
+//   });
 
-  nextButton.addEventListener("click", () => {
-      if (currentIndex < slides.length - 1) {
-          currentIndex++;
-          moveSlider();
-      }
-  });
+//   nextButton.addEventListener("click", () => {
+//       if (currentIndex < slides.length - 1) {
+//           currentIndex++;
+//           moveSlider();
+//       }
+//   });
 
-  // Initialize the slider
-  updateButtons();
-});
+//   // Initialize the slider
+//   updateButtons();
+// });
+
