@@ -36,7 +36,19 @@ body, html {
 }
 
 header {
-    position: sticky !important;
+    position: sticky;
+    top: 0;
+    z-index: 1100; /* High z-index to ensure it's above other content */
+    width: 100%;
+}
+
+
+/* Ensure the stickiness works across different browsers */
+@supports (position: sticky) {
+    header {
+        position: sticky;
+        top: 0;
+    }
 }
 
 
@@ -49,7 +61,12 @@ header {
     padding: 2rem 6.5rem;
     color: #333;
     position: relative;
-    z-index: 1000 !important;
+
+    top: 0;
+    /* left: 0; */
+    /* width: 100%; */
+    z-index: 1100;
+
 }
 
 /* Logo */
@@ -79,7 +96,7 @@ header {
     position: fixed;
     top: 0;
     right: -300px; /* Hidden off the screen */
-    height: 100%;
+    height: 100vh;
     width: 300px;
     background-color: #444;
     display: flex;
@@ -88,7 +105,7 @@ header {
     align-items: center;
     gap: 2rem;
     transition: right 0.5s ease; /* Smooth sliding effect */
-    z-index: 99;
+    z-index: 1200;
     padding: 2rem 0;
 }
 
@@ -106,6 +123,7 @@ header {
 /* Active State */
 .nav-links.active {
     right: 0; /* Slide in from the right */
+    z-index: 1200;
 }
 
 /* Close Button */
@@ -125,6 +143,21 @@ header {
 .nav-links .close-btn:hover {
     transform: scale(1.2);
     color: #00bcd4;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050; /* Between navbar and nav-links */
+    display: none;
+}
+
+.nav-links.active + .nav-overlay {
+    display: block;
 }
 
 
@@ -262,7 +295,7 @@ header {
 
 .action-icon {
     width: 20px;
-    z-index: 1000 !important;
+    z-index: 1000;
 }
 
 /* Responsive Adjustments */
@@ -296,6 +329,7 @@ header {
     overflow: hidden;
     width: 100%;
     height: 80vh;
+    z-index: 1;
 }
 
 /* Slider */

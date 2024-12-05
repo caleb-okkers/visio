@@ -72,3 +72,49 @@ function toggleMenu() {
 //   updateButtons();
 // });
 
+function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    const navOverlay = document.createElement('div');
+    navOverlay.classList.add('nav-overlay');
+    
+    navLinks.classList.toggle("active");
+    
+    if (navLinks.classList.contains('active')) {
+      document.body.appendChild(navOverlay);
+      navOverlay.addEventListener('click', toggleMenu);
+    } else {
+      const existingOverlay = document.querySelector('.nav-overlay');
+      if (existingOverlay) {
+        existingOverlay.remove();
+      }
+    }
+  }
+
+  function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    const body = document.body;
+    
+    navLinks.classList.toggle("active");
+    body.classList.toggle("menu-open");
+    
+    // Prevent scrolling when menu is open
+    if (navLinks.classList.contains('active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+  }
+  
+  // Optional: Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const navLinks = document.querySelector(".nav-links");
+    const hamburger = document.querySelector(".hamburger");
+    
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(event.target) && 
+        !hamburger.contains(event.target)) {
+      toggleMenu();
+    }
+  });
+
+  
