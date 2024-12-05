@@ -11,7 +11,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     min-height: 100vh;
     font-size: 18px;
 }
@@ -24,6 +24,7 @@ body {
 main {
     padding-left: 5rem;
     padding-right: 5rem;
+    overflow-x: hidden;
 }
 
 /* General Reset */
@@ -376,7 +377,7 @@ header {
 }
 
 .slider-controls button:hover {
-    background: rgba(0, 0, 0, 0);
+    /* background: rgba(0, 0, 0, 0); */
     opacity: 1;
 }
 
@@ -445,4 +446,171 @@ header {
 
 
 
+.indicators {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .indicator.active {
+    /* background-color: #007bff; */
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
 
+
+/* Extra Large Screens (4K displays or larger) */
+@media (min-width: 2560px) {
+    body {
+        font-size: 22px;
+    }
+    main {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+    .banner,
+    .banner-right {
+        width: 800px;
+        height: 150px;
+    }
+}
+
+/* Large Screens (Desktops and laptops) */
+@media (max-width: 1440px) {
+    body {
+        font-size: 20px;
+    }
+    main {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    .banner,
+    .banner-right {
+        width: 700px;
+        height: 120px;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+    main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .banner,
+    .banner-right {
+        width: 500px;
+        height: 100px;
+    }
+}
+
+/* Small Screens (Portrait Tablets and Large Phones) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    main {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .banner,
+    .banner-right {
+        width: 400px;
+        height: 80px;
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    main {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .banner,
+    .banner-right {
+        width: 300px;
+        height: 60px;
+    }
+}
+
+/* Ultra Small Screens (Very Small Phones) */
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .banner,
+    .banner-right {
+        width: 250px;
+        height: 50px;
+    }
+}
+
+/* General styles */
+#about {
+    padding: 2rem;
+}
+.about-container {
+    display: flex;
+    flex-direction: row; /* Default: text and icons side by side */
+    justify-content: space-between;
+    align-items: center;
+}
+.about-text {
+    flex: 1;
+    margin-right: 2rem;
+}
+.about-icon {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+/* .icon {
+    display: inline-block;
+    font-size: 2rem;
+} */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .about-container,
+    .action-container {
+        flex-direction: column; /* Stack content on mobile */
+        align-items: center;
+    }
+    .about-text,
+    .action-div {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    .about-icon,
+    .action-div {
+        flex-direction: row; /* Ensure icons are inline */
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    
+}
