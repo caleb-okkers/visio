@@ -499,6 +499,10 @@ header {
         width: 700px;
         height: 120px;
     }
+    .action-div{
+        width: 300px;
+        height: 18 0px;
+    }
 }
 
 /* Medium Screens (Tablets) */
@@ -515,6 +519,10 @@ header {
         width: 500px;
         height: 100px;
     }
+    .action-div{
+        width: 210px;
+        height: 140px;
+    }
 }
 
 /* Small Screens (Portrait Tablets and Large Phones) */
@@ -530,6 +538,28 @@ header {
     .banner-right {
         width: 400px;
         height: 80px;
+    }
+
+
+    .action-container {
+        flex-direction: column; /* Stack content on mobile */
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center !important;
+    }
+
+    .action-div {
+        /* margin-right: 0; */
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 300px !important;
+    }
+    .action-div {
+        flex-direction: row; /* Ensure icons are inline */
+        justify-content: center;
+        flex-wrap: nowrap;
+        /* width: 100%; */
+        margin: 0 auto !important;
     }
 }
 
@@ -565,26 +595,7 @@ header {
     }
 }
 
-/* General styles */
-#about {
-    padding: 2rem;
-}
-.about-container {
-    display: flex;
-    flex-direction: row; /* Default: text and icons side by side */
-    justify-content: space-between;
-    align-items: center;
-}
-.about-text {
-    flex: 1;
-    margin-right: 2rem;
-}
-.about-icon {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-}
+
 /* .icon {
     display: inline-block;
     font-size: 2rem;
