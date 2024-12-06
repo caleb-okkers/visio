@@ -27,7 +27,7 @@ main {
     overflow-x: hidden;
 }
 
-/* Define the animation */
+
 @keyframes easeInAnimation {
     from {
         opacity: 0;
@@ -37,12 +37,11 @@ main {
     }
 }
 
-/* Apply the animation to the section */
+
 section {
     animation: easeInAnimation 0.8s ease-in; /* Adjust duration and timing function */
 }
 
-/* General Reset */
 body, html {
     margin: 0;
     padding: 0;
@@ -54,12 +53,11 @@ body, html {
 header {
     position: sticky;
     top: 0;
-    z-index: 1100; /* High z-index to ensure it's above other content */
+    z-index: 1100;
     width: 100%;
 }
 
 
-/* Ensure the stickiness works across different browsers */
 @supports (position: sticky) {
     header {
         position: sticky;
@@ -68,7 +66,7 @@ header {
 }
 
 
-/* Navbar container */
+/* Navbar*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -77,21 +75,17 @@ header {
     padding: 2rem 6.5rem;
     color: #333;
     position: relative;
-
     top: 0;
-    /* left: 0; */
-    /* width: 100%; */
     z-index: 1100;
 
 }
 
-/* Logo */
+
 .navbar .logo img {
     width: 10rem;
     
 }
 
-/* Hamburger menu */
 .navbar .hamburger {
     display: flex;
     flex-direction: column;
@@ -107,12 +101,12 @@ header {
     border-radius: 1px;
 }
 
-/* Off-Canvas Nav Links */
+/* Off-Canvas Navbar */
 .nav-links {
     font-family: "Open Sans", sans-serif;
     position: fixed;
     top: 0;
-    right: -300px; /* Hidden off the screen */
+    right: -300px;
     height: 100vh;
     width: 300px;
     background-color: #061c2c;
@@ -121,7 +115,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    transition: right 0.5s ease; /* Smooth sliding effect */
+    transition: right 0.5s ease;
     z-index: 1200;
     padding: 2rem 0;
 }
@@ -137,13 +131,11 @@ header {
     color: #29a4e6;
 }
 
-/* Active State */
 .nav-links.active {
-    right: 0; /* Slide in from the right */
+    right: 0;
     z-index: 1200;
 }
 
-/* Close Button */
 .nav-links .close-btn {
     position: absolute;
     top: 10px;
@@ -183,6 +175,8 @@ header {
 
 .footer {
     text-align: center;
+    color: #4b4242;
+    height: 10vh;
 }
 
 /* About */
@@ -217,19 +211,16 @@ header {
 .about-icon img {
     max-width: 100%; 
     height: auto;
-    /* flex: 1 1 45%; */
     object-fit: contain;
 }
 
 
 
-/* Action Containers */
+/* Action Container */
 .action-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 columns */
     gap: 1rem;
-    /* Spacing between boxes */
     margin: 2rem 0;
     padding: 1rem 2rem;
 }
@@ -284,9 +275,7 @@ header {
 .action-container-sm {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    /* 6 columns */
     gap: 1rem;
-    /* Spacing between boxes */
     margin: 2rem 0;
     padding: 1rem 2rem;
 }
@@ -296,7 +285,6 @@ header {
     color: #fff;
     border: 1px solid #ddd;
     padding: 0.5rem;
-    /* text-align: center; */
     display: flex;
     justify-content: space-between;
     border-radius: 2px;
@@ -316,7 +304,7 @@ header {
 }
 
 
-/* Slider container */
+/* Slider */
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -325,14 +313,14 @@ header {
     z-index: 1;
 }
 
-/* Slider */
+
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
 }
 
-/* Individual slides */
+
 .slide {
     flex: 1 0 100%;
     height: 80vh;
@@ -346,7 +334,6 @@ header {
     object-fit: cover;
 }
 
-/* Slider controls */
 .slider-controls {
     position: absolute;
     top: 46%;
@@ -363,13 +350,11 @@ header {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    /* font-size: 48px; */
     opacity: 0.7;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .slider-controls button:hover {
-    /* background: rgba(0, 0, 0, 0); */
     opacity: 1;
 }
 
@@ -382,31 +367,21 @@ header {
 }
 
 
-/* Hide buttons when they are not needed */
-/* .slider-controls .prev {
-    left: 10px;
-}
-
-.slider-controls .next {
-    right: 10px;
-} */
-
-/* Ensure slider container overlaps the right banner */
 .slider-container {
     position: relative;
-    z-index: 10; /* Higher than .banner-right */
+    z-index: 10;
     overflow: hidden;
 }
 
-/* Banner */
+
 .banner {
     position: absolute;
     top: 18rem;
     left: 0;
-    width: 585px; /* Adjust based on your design */
+    width: 585px; 
     height: 100px;
     background: #244ac2;
-    z-index: 11; /* Ensure it overlays the slider */
+    z-index: 11;
     display: flex;
     justify-content: center;
 }
@@ -422,18 +397,17 @@ header {
     letter-spacing: 5px;
     color: #ffffff;
     margin: 0 auto;
-    padding: 25px; /* Adjust padding for text alignment */
+    padding: 25px;
 }
 
-/* Right Banner */
 .banner-right {
     position: absolute;
     top: 18rem;
-    right: 0; /* Position on the right */
-    width: 585px; /* Match left banner width */
+    right: 0;
+    width: 585px;
     height: 100px;
-    background: #000; /* Black */
-    z-index: 5; /* Lower z-index so it appears behind the slider */
+    background: #000;
+    z-index: 5;
 }
 
 
@@ -455,7 +429,6 @@ header {
   }
   
   .indicator.active {
-    /* background-color: #007bff; */
     transform: rotate(45deg);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
@@ -606,7 +579,7 @@ header {
     }
 
     .about-container {
-        flex-direction: column; /* Stack content on mobile */
+        flex-direction: column;
         align-items: center;
         
     }
@@ -623,7 +596,7 @@ header {
         width: 100%;
     }
     .about-icon {
-        flex-direction: row; /* Ensure icons are inline */
+        flex-direction: row;
         justify-content: center;
         flex-wrap: nowrap;
         width: 100%;
@@ -673,7 +646,7 @@ header {
 
 
     .action-container {
-        flex-direction: column; /* Stack content on mobile */
+        flex-direction: column;
         align-items: center;
         grid-template-columns: repeat(1, 1fr);
         align-items: center !important;
@@ -682,18 +655,16 @@ header {
     }
 
     .action-div {
-        /* margin-right: 0; */
         margin-bottom: 1rem;
         text-align: center;
         width: 300px !important;
-        flex-direction: column; /* Stack content on mobile */
+        flex-direction: column; 
         align-items: center;
     }
     .action-div {
-        flex-direction: row; /* Ensure icons are inline */
+        flex-direction: row;
         justify-content: center;
         flex-wrap: nowrap;
-        /* width: 100%; */
         margin: 0 auto !important;
     }
 
@@ -798,59 +769,38 @@ header {
 }
 
 
-/* .icon {
-    display: inline-block;
-    font-size: 2rem;
-} */
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .about-container,
-    .action-container {
-        flex-direction: column; /* Stack content on mobile */
-        align-items: center;
-        
-    }
-
-    .about-text p {
-        padding: 0 !important;
-        text-align: center;
-    }
-
-    .about-text,
-    .action-div {
-        margin-right: 0;
-        margin-bottom: 1rem;
-        text-align: center;
-        width: 100%;
-    }
-    .about-icon,
-    .action-div {
-        flex-direction: row; /* Ensure icons are inline */
-        justify-content: center;
-        flex-wrap: nowrap;
-        width: 100%;
-    }
-
-    /* .slider-container {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 40vh;
-        z-index: 1;
-    } */
-
-
-
-    
-}
-
-    /* Responsive Adjustments */
+    /* More Responsive Adjustments */
     @media (max-width: 768px) {
+
+        .about-container,
+        .action-container {
+            flex-direction: column;
+            align-items: center;
+            
+        }
+    
+        .about-text p {
+            padding: 0 !important;
+            text-align: center;
+        }
+    
+        .about-text,
+        .action-div {
+            margin-right: 0;
+            margin-bottom: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        .about-icon,
+        .action-div {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
     
         .action-container-sm {
             grid-template-columns: repeat(3, 1fr);
-            /* 3 columns on smaller screens */
         }
     }
     
@@ -858,14 +808,13 @@ header {
     
         .action-container-sm {
             grid-template-columns: 1fr;
-            /* 1 column on very small screens */
         }
-    }
 
-    @media (max-width: 400px) {
         .slider-controls button img {
             display: none !important;
         }
     }
+
+
 
     

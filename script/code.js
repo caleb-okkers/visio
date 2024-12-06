@@ -40,17 +40,14 @@ function toggleMenu() {
     const indicators = $(".indicator");
     let currentIndex = 0;
 
-    // Function to update the active slide and indicator
+
     function updateActiveSlide() {
-        // Remove the active class from all slides and indicators
         slides.removeClass('active');
         indicators.removeClass('active');
 
-        // Add active class to the current slide and its corresponding indicator
         slides.eq(currentIndex).addClass('active');
         indicators.eq(currentIndex).addClass('active');
 
-        // Move the slider by updating the transform property
         const offset = -currentIndex * 100;
         $(".slider").css("transform", `translateX(${offset}%)`);
     }
@@ -58,29 +55,22 @@ function toggleMenu() {
     // Indicators functionality
     indicators.each((index, indicator) => {
         $(indicator).click(function () {
-            currentIndex = index; // Update the current index based on the clicked indicator
-            updateActiveSlide(); // Call the function to update the active slide and indicator
+            currentIndex = index;
+            updateActiveSlide();
         });
     });
 
     // Next button functionality (slider controls)
     $(".next").click(function () {
-        // Increment currentIndex, wrap around if it exceeds the number of slides
         currentIndex = (currentIndex + 1) % slides.length;
-        updateActiveSlide(); // Call the function to update the active slide and indicator
-    });
-
-
-    $(".prev").click(function () {
-        // Decrement currentIndex, wrap around if it goes below 0
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateActiveSlide(); // Call the function to update the active slide and indicator
+        updateActiveSlide();
     });
 
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length; 
+        currentIndex = (currentIndex + 1) % slides.length; // Increment index and loop around
         updateActiveSlide(); 
     }, 7000); 
 });
 
-  
+// Set the current year in the footer
+document.getElementById("currentYear").textContent = new Date().getFullYear();
