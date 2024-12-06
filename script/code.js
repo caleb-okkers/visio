@@ -70,18 +70,17 @@ function toggleMenu() {
         updateActiveSlide(); // Call the function to update the active slide and indicator
     });
 
-    // Optional: Previous button functionality (if you have a previous button)
+
     $(".prev").click(function () {
         // Decrement currentIndex, wrap around if it goes below 0
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateActiveSlide(); // Call the function to update the active slide and indicator
     });
 
-    // Optional: Auto-advance slides and update indicators every 3 seconds (if needed)
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length; // Increment index and loop around
-        updateActiveSlide(); // Call the function to update the active slide and indicator
-    }, 7000); // 7 seconds interval for auto-sliding
+        currentIndex = (currentIndex + 1) % slides.length; 
+        updateActiveSlide(); 
+    }, 7000); 
 });
 
   
